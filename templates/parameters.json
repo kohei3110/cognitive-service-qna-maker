@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "channels_WebChatChannel_enablePreview": {
+            "value": null
+        },
+        "sites_qna_maker4demo_name": {
+            "value": null
+        },
+        "sites_qna_maker4demo_bot_name": {
+            "value": null
+        },
+        "serverfarms_qna_maker4demo_name": {
+            "value": null
+        },
+        "components_qna_maker4demo_ai_name": {
+            "value": null
+        },
+        "botServices_qna_maker4demo_bot_name": {
+            "value": null
+        },
+        "accounts_qna_maker4demo_name": {
+            "value": null
+        },
+        "components_qna_maker4demo_botxczekd_name": {
+            "value": null
+        },
+        "searchServices_qnamaker4demo_asiwen5m6dcqpdk_name": {
+            "value": null
+        },
+        "smartdetectoralertrules_failure_anomalies___qna_maker4demo_ai_name": {
+            "value": null
+        },
+        "smartdetectoralertrules_failure_anomalies___qna_maker4demo_botxczekd_name": {
+            "value": null
+        },
+        "actiongroups_application_insights_smart_detection_externalid": {
+            "value": null
+        },
+        "serverfarms_appsvc_windows_centralus_basic_externalid": {
+            "value": null
+        }
+    }
+}
