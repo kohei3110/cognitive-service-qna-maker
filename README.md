@@ -11,14 +11,23 @@ FAQ の問い合わせに対し、 Teams 経由で回答を返してくれる Ch
 - Azure サブスクリプションを保有していること
 - 必要に応じて、リソースグループを作成すること
 
+## QnA Maker について
+
+![alt text](./images/agile-qna.png)
+
+（参考：[QnA Maker におけるナレッジ ベースのライフサイクル](https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/concepts/development-lifecycle-knowledge-base)）
+
 ## 手順
 
 ### 1. QnA Maker リソースの作成
 
 [QnA Maker リソース](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker)を作成します。<br>
 作成時に設定するそれぞれの値は、下図を参照してください。
+（サブスクリプション、リソースグループ、名前は任意です。）
 
 ![alt text](./images/create-qna-maker.png)
+
+QnA Maker リソースの準備が整うまで、
 
 ### 2. ナレッジベースの作成
 
@@ -35,27 +44,28 @@ QnA Maker では、あらかじめ質問と回答の対である「ナレッジ�
 
 [QnA Maker のトラブルシューティング](https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/troubleshooting?tabs=v1)
 
-2-1. まず、ご自身の資格情報を使って、[ QnAMaker ポータル](https://www.qnamaker.ai/)にサインインします。
-2-2. QnA Maker ポータルで、画面上部「Create a knowledge base」を選択します。
+#### 2-1. まず、ご自身の資格情報を使って、[QnAMaker ポータル](https://www.qnamaker.ai/)にサインインします。
+
+#### 2-2. QnA Maker ポータルで、画面上部「Create a knowledge base」を選択します。
 
 ![alt text](./images/create-a-knowledge-base.png)
 
-2-3. [Step 2] で、`手順 1` で作成した QnA Maker リソースを、これから登録するナレッジベースと結びつけます。
+#### 2-3. [Step 2] で、`手順 1` で作成した QnA Maker リソースを、これから登録するナレッジベースと結びつけます。
 
-2-4. [Step 3] で、自分のナレッジ ベースに <b>FAQ QnA KB</b> という名前を付けます。
+#### 2-4. [Step 3] で、自分のナレッジ ベースに <b>FAQ QnA KB</b> という名前を付けます。
 
 ![alt text](./images/create-a-knowledge-base-2-3.png)
 
-2-5. [Step 4] で、次の表を使用して設定を構成します。
+#### 2-5. [Step 4] で、次の表を使用して設定を構成します。
 
 | 設定 | 値 |
 | :--- | :--- |
 | Enable multi-turn extraction from URLs, .pdf or .docx files (URL、.pdf、または .docx ファイルからの複数ターンの抽出を有効にする) | オン |
 | Multi-turn default text (マルチターンのデフォルト テキスト) | Select an option |
 | + Add URL (+ URL の追加) | https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/troubleshooting?tabs=v1 |
-| Chit-chat (おしゃべり) | [Professional]を選択します |
+| Chit-chat (おしゃべり) | [None]を選択します |
 
-2-6. [Step 5]で、 [Create your KB]を選択します。
+#### 2-6. [Step 5]で、 [Create your KB]を選択します。
 
 ![alt text](./images/create-a-knowledge-base-4-5.png)
 
@@ -108,3 +118,27 @@ Publish 後、ボットを作成することが可能です。今回は、下図
 ![alt text](./images/teams.png)
 
 ![alt text](./images/qna-maker4demo-on-teams.png)
+
+### 8. FAQ を追加する
+
+FAQ は、[QnAMaker ポータル](https://www.qnamaker.ai/)から追加することができます。ここでは、テストとして、以下のペアを追加します。
+
+| 質問 | 回答 |
+| :--- | :--- |
+| QnA Maker が起動しなくなった | IT部門に問い合わせてください。連絡先は、下記のとおりです。<br> http://internal-it.org |
+
+追加後、画面右上の [Save and train] をクリックし、編集内容を保存して QnA Maker をトレーニングします。
+
+![alt text](./images/additional-faq.png)
+
+完了後、画面右上の [Test] をクリックし、ナレッジベースをテストし、保存した内容が期待通りに動作するかを検証できます。
+
+![alt text](./images/additional-faq-test.png)
+
+`5. Publish` の手順と同様に、作成したナレッジベースを Publish することで、既存のナレッジベースを更新可能です。Teams 経由で、作成した新たな回答が返ってくることを確認します。
+
+![alt text](./images/additional-faq-teams.png)
+
+## 参考
+
+- [コンテンツ形式のガイドライン](https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/reference-document-format-guidelines)
